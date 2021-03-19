@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<executable>
+  <category>CSIM_Extension</category>
+  <title>Modified q-Entropy Segmentation</title>
+  <description><![CDATA[Testing]]></description>
+  <version>0.1.0.$Revision$(alpha)</version>
+  <documentation-url>http://slicer.org/slicerWiki/index.php/Documentation/4.3/Modules/Add</documentation-url>
+  <license/>
+  <contributor>Mehran Azimbagirad</contributor>
+  <acknowledgements><![CDATA[This work is part of CSIM Team in University of Sao Paulo.]]></acknowledgements>
+  <parameters>
+    <label>Input Image:</label>
+    <description><![CDATA[Input/output parameters]]></description>
+    <image>
+      <name>inputVolume</name>
+      <label>Input Volume</label>
+      <channel>input</channel>
+      <index>0</index>
+      <description><![CDATA[Input original volume]]></description>
+    </image>
+</parameters>
+<parameters>
+    <label>Output Images:</label>
+    <description><![CDATA[Input/output parameters]]></description>
+<image type="label">
+      <name>outputVolume</name>
+      <label>LabelMap</label>
+      <channel>output</channel>
+      <index>2</index>
+      <description><![CDATA[Volume result]]></description>
+</image>
+  </parameters>
+<parameters>  
+<label>q-Entropy Segmentation parameters:</label> 
+  
+  <boolean>
+   <name>classic</name>
+   <longflag>--classic</longflag>
+   <description><![CDATA[Check if you want to use classical entropy]]></description>
+   <label>Use classical entropy</label>
+   <default>false</default>
+  </boolean>     
+
+
+    <double>
+        <name>q0</name>
+       <longflag>--q0</longflag>
+       <label>start point for q:</label>
+       <description><![CDATA[Initial value for q]]></description>
+        <default>-3.415</default> 
+        <constraints>
+        <minimum>-4.115</minimum>
+        <maximum>4.115</maximum>
+        <step>0.01</step>
+        </constraints>
+      </double>
+</parameters>
+</executable>
